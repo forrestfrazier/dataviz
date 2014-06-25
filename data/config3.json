@@ -1,0 +1,41 @@
+{
+    "height": 500,
+    "sortable": {
+        "mode": "multiple"
+    },
+    "columns": [{
+        "field": "number",
+        "title": "#",
+        "width": "5%",
+        "headerTemplate": ""
+    }, {
+        "field": "name",
+        "title": "Project",
+        "width": "15%"
+    }, {
+        "field": "status",
+        "title": "Overall Project<br> TL Status",
+        "width": "10%",
+        "type": "statusTextBar"
+    }, {
+        "field": "completed",
+        "title": "Completed",
+        "width": "15%",
+        "type": "barChart"
+    }, {
+        "field": "onTrack",
+        "title": "On Track",
+        "width": "15%",
+        "type": "barChart"
+    }, {
+        "field": "atRisk",
+        "title": "At Risk",
+        "width": "15%",
+        "type": "barChart"
+    }, {
+        "field": "offTrack",
+        "title": "Off Track",
+        "width": "15%",
+        "type": "barChart"
+    }]
+}
