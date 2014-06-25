@@ -1,0 +1,242 @@
+[
+    {
+        "number": "1.1.1",
+        "name": "Establish Call",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 90
+    },
+    {
+        "number": "1.1.2",
+        "name": "REC Call Switch",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 80
+    },
+    {
+        "number": "1.1.3",
+        "name": "Phone Number Setup",
+        "owner": "John Smith",
+        "status" : 1,
+        "ms": 0,
+        "diceScore": 60
+    },
+    {
+        "number": "1.1.4",
+        "name": "IVR Update",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 1,
+        "diceScore": 58
+    },
+    {
+        "number": "1.1.5",
+        "name": "Customer Identification",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 55
+    },
+    {
+        "number": "5.1.1",
+        "name": "Establish Call",
+        "owner": "John Smith",
+        "status" : 1,
+        "ms": 2,
+        "diceScore": 50
+    },
+    {
+        "number": "5.1.2",
+        "name": "REC Call Switch",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 45
+    },
+    {
+        "number": "5.1.3",
+        "name": "Phone Number Setup",
+        "owner": "John Smith",
+        "status" : 1,
+        "ms": 1,
+        "diceScore": 35
+    },
+    {
+        "number": "5.1.4",
+        "name": "IVR Update",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 30
+    },
+    {
+        "number": "5.1.5",
+        "name": "Customer Identification",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 20
+    },
+    {
+        "number": "8.1.1",
+        "name": "Establish Call",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 47
+    },
+    {
+        "number": "8.1.2",
+        "name": "REC Call Switch",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 24
+    },
+    {
+        "number": "8.1.3",
+        "name": "Phone Number Setup",
+        "owner": "John Smith",
+        "status" : 1,
+        "ms": 0,
+        "diceScore": 66
+    },
+    {
+        "number": "8.1.4",
+        "name": "IVR Update",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 1,
+        "diceScore": 97
+    },
+    {
+        "number": "8.1.5",
+        "name": "Customer Identification",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 25
+    },
+    {
+        "number": "12.1.1",
+        "name": "Establish Call",
+        "owner": "John Smith",
+        "status" : 1,
+        "ms": 2,
+        "diceScore": 10
+    },
+    {
+        "number": "12.1.2",
+        "name": "REC Call Switch",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 44
+    },
+    {
+        "number": "12.1.3",
+        "name": "Phone Number Setup",
+        "owner": "John Smith",
+        "status" : 1,
+        "ms": 1,
+        "diceScore": 77
+    },
+    {
+        "number": "12.1.4",
+        "name": "IVR Update",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 31
+    },
+    {
+        "number": "12.1.5",
+        "name": "Customer Identification",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 5
+    },
+    {
+        "number": "18.1.1",
+        "name": "Establish Call",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 82
+    },
+    {
+        "number": "18.1.2",
+        "name": "REC Call Switch",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 91
+    },
+    {
+        "number": "18.1.3",
+        "name": "Phone Number Setup",
+        "owner": "John Smith",
+        "status" : 1,
+        "ms": 0,
+        "diceScore": 27
+    },
+    {
+        "number": "18.1.4",
+        "name": "IVR Update",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 1,
+        "diceScore": 38
+    },
+    {
+        "number": "18.1.5",
+        "name": "Customer Identification",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 20
+    },
+    {
+        "number": "22.1.1",
+        "name": "Establish Call",
+        "owner": "John Smith",
+        "status" : 1,
+        "ms": 2,
+        "diceScore": 10
+    },
+    {
+        "number": "22.1.2",
+        "name": "REC Call Switch",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 7
+    },
+    {
+        "number": "22.1.3",
+        "name": "Phone Number Setup",
+        "owner": "John Smith",
+        "status" : 1,
+        "ms": 1,
+        "diceScore": 53
+    },
+    {
+        "number": "22.1.4",
+        "name": "IVR Update",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 29
+    },
+    {
+        "number": "22.1.5",
+        "name": "Customer Identification",
+        "owner": "John Smith",
+        "status" : 2,
+        "ms": 2,
+        "diceScore": 35
+    }
+]

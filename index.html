@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bar Chart Using Kendo UI Grid</title>
+    <link href="styles/kendo.common.min.css" rel="stylesheet">
+    <link href="styles/kendo.rtl.min.css" rel="stylesheet">
+    <link href="styles/kendo.default.min.css" rel="stylesheet">
+    <link href="styles/kendo.dataviz.min.css" rel="stylesheet">
+    <link href="styles/kendo.dataviz.default.min.css" rel="stylesheet">
+    <link href="styles/normalize.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <form class="toolbar">
+        <select class="use-case-selector">
+            <option value="0">6.1 - Text Version</option>
+            <option value="1">6.1 - DataViz Version</option>
+            <option value="2">6.3 - DataViz Version</option>
+        </select>
+    </form>
+
+    <div id="grid"></div>
+
+    <!-- table-header -->
+    <script type="text/template" id="table-header1">
+        <tr class="table-header1">
+            <th colspan="2">Roadmap Name</th>
+            <th>Owner</th>
+            <th colspan="3">Status</th>
+            <th>Dice Score</th>
+        </tr>
+    </script>
+</body>
+</html>

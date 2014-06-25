@@ -1,0 +1,42 @@
+{
+    "height": 500,
+    "sortable": {
+        "mode": "multiple"
+    },
+    "columns": [
+        {
+            "field": "number",
+            "title": "#",
+            "width": "7%",
+            "headerTemplate": ""
+        },
+        {
+            "field": "name",
+            "title": "Name",
+            "width": "23%"
+        },
+        {
+            "field": "owner",
+            "title": "Owner",
+            "width": "15%"
+        },
+        {
+            "field": "status",
+            "title": "Status",
+            "width": "15%",
+            "type": "trafficLight"
+        },
+        {
+            "field": "ms",
+            "title": "MS",
+            "width": "5%",
+            "type": "trafficLight"
+        },
+        {
+            "field": "diceScore",
+            "title": "DICE Score",
+            "width": "35%",
+            "type": "barChart"
+        }
+    ]
+}

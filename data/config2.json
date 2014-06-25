@@ -1,0 +1,42 @@
+{
+    "height": 500,
+    "sortable": {
+        "mode": "multiple"
+    },
+    "columns": [
+        {
+            "field": "number",
+            "title": "#",
+            "width": "7%",
+            "headerTemplate": ""
+        },
+        {
+            "field": "name",
+            "title": "Name",
+            "width": "20%"
+        },
+        {
+            "field": "owner",
+            "title": "Owner",
+            "width": "10%"
+        },
+        {
+            "field": "status",
+            "title": "Status",
+            "width": "13%",
+            "type": "trafficLight"
+        },
+        {
+            "field": "updatedVsPlanned",
+            "title": "Updated v. Planned",
+            "width": "25%",
+            "type": "barChart"
+        },
+        {
+            "field": "actualVsPlanned",
+            "title": "Actual v. Planned",
+            "width": "25%",
+            "type": "barChart"
+        }
+    ]
+}
