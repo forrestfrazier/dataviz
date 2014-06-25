@@ -17,7 +17,7 @@ function drawGrid(configuration, data) {
                 break;
             case "statusTextBar":
                 column.template = function(dataItem) {
-                    return '<span>' + dataItem[column.field] + '%</span><span>$10M</span> <div class="blue-vlight" style="width: ' + dataItem[column.field] + '%">&nbsp;</div>';
+                    return '<span>' + dataItem[column.field] + '%</span>' + '<span>' + '  $' + dataItem["completedCost"] + 'M</span>' + '<div class="blue-vlight" style="width:">&nbsp;</div>';
                 };
                 break;
         }
