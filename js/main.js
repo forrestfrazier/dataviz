@@ -15,10 +15,24 @@ function drawGrid(configuration, data) {
                     return '<div class="blue-vlight" style="width: ' + dataItem[column.field] + '%">&nbsp;</div>';
                 };
                 break;
-            case "statusTextBar":
+            case "completedTextBar":
                 column.template = function(dataItem) {
-                    return '<span>/#:data.completed# %</span>'
-                    return '<div class="blue-vlight" style="width: ' + dataItem[column.field] + '%">&nbsp;</div>';
+                    return '<div class="text-wrapper"><span>' + dataItem[column.field] + '%</span><span class="cost">$' + dataItem["completedCost"] + 'M</span></div><div class="bar-wrapper"><div style="width: ' + dataItem[column.field] + '%">&nbsp;</div></div>';
+                };
+                break;
+            case "onTrackTextBar":
+                column.template = function(dataItem) {
+                    return '<div class="text-wrapper"><span>' + dataItem[column.field] + '%</span><span class="cost">$' + dataItem["onTrackCost"] + 'M</span></div><div class="bar-wrapper"><div style="width: ' + dataItem[column.field] + '%">&nbsp;</div></div>';
+                };
+                break;
+            case "atRiskTextBar":
+                column.template = function(dataItem) {
+                    return '<div class="text-wrapper"><span>' + dataItem[column.field] + '%</span><span class="cost">$' + dataItem["atRiskCost"] + 'M</span></div><div class="bar-wrapper"><div style="width: ' + dataItem[column.field] + '%">&nbsp;</div></div>';
+                };
+                break;
+            case "offTrackTextBar":
+                column.template = function(dataItem) {
+                    return '<div class="text-wrapper"><span>' + dataItem[column.field] + '%</span><span class="cost">$' + dataItem["offTrackCost"] + 'M</span></div><div class="bar-wrapper"><div style="width: ' + dataItem[column.field] + '%">&nbsp;</div></div>';
                 };
                 break;
         }

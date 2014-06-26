@@ -16,26 +16,40 @@
         "field": "status",
         "title": "Overall Project<br> TL Status",
         "width": "10%",
-        "type": "statusTextBar"
+        "type": "trafficLight"
     }, {
         "field": "completed",
         "title": "Completed",
+        "attributes": {
+            "class": "completed"
+        },
         "width": "15%",
-        "type": "barChart"
+        "type": "completedTextBar"
     }, {
         "field": "onTrack",
         "title": "On Track",
+        "attributes": {
+            "class": "on-track"
+        },
         "width": "15%",
-        "type": "barChart"
+        "type": "onTrackTextBar"
     }, {
+
         "field": "atRisk",
         "title": "At Risk",
+        "attributes": {
+            "class": "at-risk"
+        },
         "width": "15%",
-        "type": "barChart"
+        "type": "atRiskTextBar"
     }, {
+
         "field": "offTrack",
         "title": "Off Track",
+        "attributes": {
+            "class": "off-track"
+        },
         "width": "15%",
-        "type": "barChart"
+        "type": "offTrackTextBar"
     }]
 }

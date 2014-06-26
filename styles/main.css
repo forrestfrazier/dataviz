@@ -79,3 +79,27 @@ div.k-grid-header {
     font-weight: bold;
     font-size: 14px;
 }
+
+/* GRID 6.5 */
+.text-wrapper {
+    float: left;
+    width: 20%;
+}
+.text-wrapper span {
+    display: block;
+    line-height: 1.25;
+    padding-right: .5em;
+    text-align: right;
+    }
+.bar-wrapper {
+    float: left;
+    width: 80%;
+}
+.k-grid .completed { color: #333;}
+.completed .bar-wrapper>div { background: #333;}
+.k-grid .on-track { color: green;}
+.on-track .bar-wrapper>div { background: green;}
+.k-grid .at-risk { color: #D8A514;}
+.at-risk .bar-wrapper>div { background: #D8A514;}
+.k-grid .off-track { color: #C05D4E;}
+.off-track .bar-wrapper>div { background: #C05D4E;}
