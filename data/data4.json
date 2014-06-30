@@ -1,6 +1,6 @@
 [{
-    "number": "1.0",
-    "name": "Project",
+    "name": "1.0 Project",
+    "treeType": "project",
     "owner": "John Smith",
     "overallMS": 2,
     "overallIM": 1,
@@ -10,8 +10,8 @@
     "total": 57,
     "target": 40
 }, {
-    "number": "1.1",
-    "name": "Sub Project",
+    "name": "1.1 Sub Project",
+    "treeType": "sub-project",
     "owner": "John Smith",
     "overallMS": 2,
     "overallIM": 1,
@@ -21,8 +21,8 @@
     "total": 70,
     "target": 40
 }, {
-    "number": "1.2",
-    "name": "Sub Project",
+    "name": "1.2 Sub Project",
+    "treeType": "sub-project",
     "owner": "John Smith",
     "overallMS": 2,
     "overallIM": 1,
@@ -32,31 +32,27 @@
     "total": 70,
     "target": 40
 }, {
-    "number": "1.1.4",
-    "name": "IVR Update",
+    "name": "2.0 Project",
+    "treeType": "project",
     "owner": "John Smith",
-    "status": 2,
-    "completed": 2,
-    "completedCost": 10,
-    "onTrack": 10,
-    "onTrackCost": 15,
-    "atRisk": 40,
-    "atRiskCost": 65,
-    "offTrack": 70,
-    "offTrackCost": 95
+    "overallMS": 2,
+    "overallIM": 1,
+    "overallDICE": 2,
+    "offTrack": 25,
+    "atRisk": 32,
+    "total": 57,
+    "target": 40
 }, {
-    "number": "1.1.5",
-    "name": "Customer Identification",
+    "name": "2.1 Sub Project",
+    "treeType": "sub-project",
     "owner": "John Smith",
-    "status": 2,
-    "completed": 2,
-    "completedCost": 10,
-    "onTrack": 10,
-    "onTrackCost": 15,
+    "overallMS": 2,
+    "overallIM": 1,
+    "overallDICE": 2,
+    "offTrack": 30,
     "atRisk": 40,
-    "atRiskCost": 65,
-    "offTrack": 70,
-    "offTrackCost": 95
+    "total": 70,
+    "target": 40
 }, {
     "number": "5.1.1",
     "name": "Establish Call",

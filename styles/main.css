@@ -103,3 +103,16 @@ div.k-grid-header {
 .at-risk .bar-wrapper>div { background: #D8A514;}
 .k-grid .off-track { color: #C05D4E;}
 .off-track .bar-wrapper>div { background: #C05D4E;}
+
+/* GRID 6.6 */
+.k-grid .project-number {
+    text-align: right;
+    padding-right: .75em;
+}
+.off-track-66, .at-risk-66, .total-66 {
+    text-align: center;
+}
+.project-66 { font-weight: bold }
+.sub-project-66 {
+    padding-left: 2em;
+}
