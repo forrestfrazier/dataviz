@@ -59,6 +59,9 @@ function handleSelection(value) {
     }, {
         config: "data/config3.json",
         data: "data/data3.json"
+    }, {
+        config: "data/config4.json",
+        data: "data/data4.json"
     }, ];
 
     $.getJSON(filePair[value].config)
