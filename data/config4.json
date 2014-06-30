@@ -1,0 +1,51 @@
+{
+    "height": 500,
+    "sortable": {
+        "mode": "multiple"
+    },
+    "columns": [{
+        "field": "name",
+        "title": "Project",
+        "width": "24%",
+        "type": "projectNameType"
+    }, {
+        "field": "overallMS",
+        "title": "Overall MS",
+        "width": "12%",
+        "type": "trafficLight"
+    }, {
+        "field": "overallIM",
+        "title": "Overall IM",
+        "width": "12%",
+        "type": "trafficLight"
+    }, {
+        "field": "overallDICE",
+        "title": "Overall DICE",
+        "width": "12%",
+        "type": "trafficLight"
+    }, {
+
+        "field": "offTrack",
+        "title": "$(m) Off Track",
+        "attributes": {
+            "class": "off-track-66"
+        },
+        "width": "12%"
+    }, {
+
+        "field": "atRisk",
+        "title": "$(m) At Risk",
+        "attributes": {
+            "class": "at-risk-66"
+        },
+        "width": "12%"
+    }, {
+
+        "field": "total",
+        "title": "$(m) Total",
+        "attributes": {
+            "class": "total-66"
+        },
+        "width": "12%"
+    }]
+}

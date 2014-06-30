@@ -35,6 +35,11 @@ function drawGrid(configuration, data) {
                     return '<div class="text-wrapper"><span>' + dataItem[column.field] + '%</span><span class="cost">$' + dataItem["offTrackCost"] + 'M</span></div><div class="bar-wrapper"><div style="width: ' + dataItem[column.field] + '%">&nbsp;</div></div>';
                 };
                 break;
+            case "projectNameType":
+                column.template = function(dataItem) {
+                    return '<div class="' + dataItem["treeType"] + '-66">' + dataItem[column.field] + '</div>';
+                };
+                break;
         }
     });
 
@@ -59,6 +64,12 @@ function handleSelection(value) {
     }, {
         config: "data/config3.json",
         data: "data/data3.json"
+    }, {
+        config: "data/config4.json",
+        data: "data/data4.json"
+    }, {
+        config: "data/config5.json",
+        data: "data/data5.json"
     }, ];
 
     $.getJSON(filePair[value].config)
