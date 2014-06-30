@@ -40,6 +40,11 @@ function drawGrid(configuration, data) {
                     return '<div class="' + dataItem["treeType"] + '-66">' + dataItem[column.field] + '</div>';
                 };
                 break;
+            case "bulletBar":
+                column.template = function(dataItem) {
+                    return '<div class="target-progress-67" style="width:' + dataItem[column.field] + '%"></div><div class="target-67" style="left:' + dataItem["target"] + '%"></div>';
+                };
+                break;
         }
     });
 

@@ -1,0 +1,38 @@
+{
+    "height": 500,
+    "sortable": {
+        "mode": "multiple"
+    },
+    "columns": [{
+        "field": "name",
+        "title": "Project",
+        "width": "15%",
+        "type": "projectNameType"
+    }, {
+        "field": "owner",
+        "title": "Owner",
+        "width": "10%"
+    }, {
+        "field": "total2014",
+        "title": "$(m) Total",
+        "attributes": {
+            "class": "total-67"
+        },
+        "width": "10%"
+    }, {
+        "field": "total2015",
+        "title": "$(m) Total",
+        "attributes": {
+            "class": "total-67"
+        },
+        "width": "10%"
+    }, {
+        "field": "targetProgress",
+        "title": "Progress to Target",
+        "attributes": {
+            "class": "target-progress-wrapper-67"
+        },
+        "width": "25%",
+        "type": "bulletBar"
+    }]
+}
