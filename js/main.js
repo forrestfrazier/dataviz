@@ -5,6 +5,23 @@ function drawGrid(configuration, data) {
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
         switch (column.type) {
+            case "trafficLightToolTip":{
+                    column.template = function(dataItem) {
+                        return '<div class="' + trafficLights[dataItem[column.field]] + ' tooltip">&nbsp;</div>';
+                    };
+
+                    $("#grid").kendoTooltip({
+                        autoHide: true,
+                        showOn: "mouseenter",
+                        width: 50,
+                        height: 50,
+                        position: "top",
+                        visible: true,
+                        content: kendo.template($("#template").html())
+                    });
+
+                }
+                break;
             case "trafficLight":
                 column.template = function(dataItem) {
                     return '<div class="' + trafficLights[dataItem[column.field]] + '">&nbsp;</div>';

@@ -12,17 +12,17 @@
         "field": "overallMS",
         "title": "Overall MS",
         "width": "12%",
-        "type": "trafficLight"
+        "type": "trafficLightToolTip"
     }, {
         "field": "overallIM",
         "title": "Overall IM",
         "width": "12%",
-        "type": "trafficLight"
+        "type": "trafficLightToolTip"
     }, {
         "field": "overallDICE",
         "title": "Overall DICE",
         "width": "12%",
-        "type": "trafficLight"
+        "type": "trafficLightToolTip"
     }, {
 
         "field": "offTrack",
