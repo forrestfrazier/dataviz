@@ -47,5 +47,12 @@
             "class": "total-66"
         },
         "width": "12%"
+    }, {
+        "attributes": {
+            "class": "popup-66"
+        },
+        "title": "Temp",
+        "width": "12%",
+        "type": "popupTemplate"
     }]
 }

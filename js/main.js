@@ -1,10 +1,18 @@
 var trafficLights = ["green", "yellow", "red"];
 
 function drawGrid(configuration, data) {
-
+    var count = 0;
+    var temp = 0;
+    var names = [];
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
         switch (column.type) {
+            case "popupTemplate":
+                column.template = function(dataItem) {
+                    var template = ("<div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p>");
+                    return template;
+                };
+                break;
             case "trafficLight":
                 column.template = function(dataItem) {
                     return '<div class="' + trafficLights[dataItem[column.field]] + '">&nbsp;</div>';
@@ -38,6 +46,11 @@ function drawGrid(configuration, data) {
             case "projectNameType":
                 column.template = function(dataItem) {
                     return '<div class="' + dataItem["treeType"] + '-66">' + dataItem[column.field] + '</div>';
+                };
+                break;
+            case "bulletBar":
+                column.template = function(dataItem) {
+                    return '<div class="target-progress-67" style="width:' + dataItem[column.field] + '%"></div><div class="target-67" style="left:' + dataItem["target"] + '%"></div>';
                 };
                 break;
         }
