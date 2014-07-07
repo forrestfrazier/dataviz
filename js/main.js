@@ -12,17 +12,6 @@ function drawGrid(configuration, data) {
                     column.template = function(dataItem) {
                         return '<div class="' + trafficLights[dataItem[column.field]] + ' tooltip">&nbsp;</div>';
                     };
-
-                    /*$("#grid").kendoTooltip({
-                        autoHide: true,
-                        showOn: "mouseenter",
-                        width: 50,
-                        height: 50,
-                        position: "top",
-                        visible: true,
-                        content: kendo.template($("#template").html())
-                    });*/
-
                 }
                 break;
             case "popupTemplate":
@@ -110,19 +99,31 @@ function handleSelection(value) {
             $.getJSON(filePair[value].data)
                 .done(function(data) {
                     drawGrid(configuration, data);
-                    pseudoHeader();
+                    pseudoHeader(configuration);
                 });
         });
 }
 
 // create a fake header for column group lables above the existing kendo header
-function pseudoHeader() {
-    console.log('build fake header');
+function pseudoHeader(configuration) {
+    //console.log('build fake header ' + configuration.pseudoHeader);
+    console.log(JSON.parse(JSON.stringify(configuration)));
     // look at json for fake header info
-    // if statement  here
+    if (configuration.pseudoHeader) {
+        console.log('add header');
+        // replicate, rename and place
+        $('.k-grid-header-wrap').clone().addClass('label-grid').removeClass('k-grid-header-wrap').prependTo('.k-grid-header');
+        // remove existing content
+        $('.label-grid th').empty();
+        // iterate through all columns and replace content
+        $().each(function() {
+            // match data-field to pseudoHeader.replaces and add label as text
+            if ($('label-grid th').find("[data-field='" + current + "']")) {
+                $(this).text(configuration.pseudoHeader.label);
+            }
+        });
+    }
 
-    // replicate and place
-    $('.k-grid-header-wrap').clone().prependTo('.k-grid-header');
 }
 
 
