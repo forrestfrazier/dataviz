@@ -119,6 +119,11 @@ div.k-grid-header {
 .k-state-selected {
     background: #eee;
 }
+[data-title="popup-header-66"] { display: none;}
+.popup-66 { display: none;}
+.k-state-selected .popup-66 {
+    display: block
+}
 
 /* GRID 6.7 */
 .k-grid .target-progress-wrapper-67 {

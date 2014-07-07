@@ -123,24 +123,4 @@ $(document).ready(function() {
 
     handleSelection(0);
 
-    // tooltip for 6.6
-    $(".tooltip").each(function() {
-        $(this).kendoTooltip({
-            content: "WTF??? Why don\'t I show?",
-            position: "top",
-            animation: {
-                open: {
-                    effects: "fade:in",
-                    duration: 200
-                },
-                close: {
-                    effects: "fade:in",
-                    reverse: true,
-                    duration: 200
-                }
-            }
-        });
-    });
-
-
 });
