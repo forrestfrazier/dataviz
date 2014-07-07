@@ -5,6 +5,24 @@ function drawGrid(configuration, data) {
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
         switch (column.type) {
+            case "trafficLightToolTip":
+                {
+                    column.template = function(dataItem) {
+                        return '<div class="' + trafficLights[dataItem[column.field]] + ' tooltip">&nbsp;</div>';
+                    };
+
+                    /*$("#grid").kendoTooltip({
+                        autoHide: true,
+                        showOn: "mouseenter",
+                        width: 50,
+                        height: 50,
+                        position: "top",
+                        visible: true,
+                        content: kendo.template($("#template").html())
+                    });*/
+
+                }
+                break;
             case "trafficLight":
                 column.template = function(dataItem) {
                     return '<div class="' + trafficLights[dataItem[column.field]] + '">&nbsp;</div>';
@@ -45,6 +63,7 @@ function drawGrid(configuration, data) {
                     return '<div class="target-progress-67" style="width:' + dataItem[column.field] + '%"></div><div class="target-67" style="left:' + dataItem["target"] + '%"></div>';
                 };
                 break;
+
         }
     });
 
@@ -53,6 +72,7 @@ function drawGrid(configuration, data) {
     });
 
     $("#grid").empty().kendoGrid(configuration);
+
 }
 
 // show the display based on dropdown
@@ -94,4 +114,25 @@ $(document).ready(function() {
     });
 
     handleSelection(0);
+
+    // tooltip for 6.6
+    $(".tooltip").each(function() {
+        $(this).kendoTooltip({
+            content: "WTF??? Why don\'t I show?",
+            position: "top",
+            animation: {
+                open: {
+                    effects: "fade:in",
+                    duration: 200
+                },
+                close: {
+                    effects: "fade:in",
+                    reverse: true,
+                    duration: 200
+                }
+            }
+        });
+    });
+
+
 });

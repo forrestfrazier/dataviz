@@ -116,6 +116,9 @@ div.k-grid-header {
 .sub-project-66 {
     padding-left: 2em;
 }
+.k-state-selected {
+    background: #eee;
+}
 
 /* GRID 6.7 */
 .k-grid .target-progress-wrapper-67 {
