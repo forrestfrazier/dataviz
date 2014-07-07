@@ -119,10 +119,28 @@ div.k-grid-header {
 .k-state-selected {
     background: #eee;
 }
-[data-title="popup-header-66"] { display: none;}
-.popup-66 { display: none;}
+[data-title="popup-header-66"] {
+    width: 0;
+    }
+.popup-66 {
+    display: none;
+    width: 0;
+}
 .k-state-selected .popup-66 {
-    display: block
+    display: block;
+}
+.k-state-selected .popup-66 .popper-66 {
+    background: rgba(255,255,255,.9);
+    border: 1px solid #ccc;
+    display: block;
+    height: 100px;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -50px;
+    position: fixed;
+    text-align: center;
+    width: 200px;
+    z-index: 2;
 }
 
 /* GRID 6.7 */

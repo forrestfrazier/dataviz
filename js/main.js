@@ -27,7 +27,7 @@ function drawGrid(configuration, data) {
                 break;
             case "popupTemplate":
                 column.template = function(dataItem) {
-                    var template = ("<div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p>");
+                    var template = ("<div class=\"popper-66\"><div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p></div>");
                     return template;
                 };
                 break;
