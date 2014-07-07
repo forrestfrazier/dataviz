@@ -1,7 +1,9 @@
 var trafficLights = ["green", "yellow", "red"];
 
 function drawGrid(configuration, data) {
-
+    var count = 0;
+    var temp = 0;
+    var names = [];
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
         switch (column.type) {
@@ -22,6 +24,12 @@ function drawGrid(configuration, data) {
                     });*/
 
                 }
+                break;
+            case "popupTemplate":
+                column.template = function(dataItem) {
+                    var template = ("<div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p>");
+                    return template;
+                };
                 break;
             case "trafficLight":
                 column.template = function(dataItem) {
