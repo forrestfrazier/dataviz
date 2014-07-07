@@ -4,6 +4,13 @@
     "sortable": {
         "mode": "multiple"
     },
+    "pseudoHeader": [{
+        "label": "Overall Trafic Lights",
+        "replaces": "overallMS"
+    }, {
+        "label": "Ca$h",
+        "replaces": "$(m) Off Track"
+    }],
     "columns": [{
         "field": "name",
         "title": "Project",

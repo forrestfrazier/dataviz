@@ -110,9 +110,21 @@ function handleSelection(value) {
             $.getJSON(filePair[value].data)
                 .done(function(data) {
                     drawGrid(configuration, data);
+                    pseudoHeader();
                 });
         });
 }
+
+// create a fake header for column group lables above the existing kendo header
+function pseudoHeader() {
+    console.log('build fake header');
+    // look at json for fake header info
+    // if statement  here
+
+    // replicate and place
+    $('.k-grid-header-wrap').clone().prependTo('.k-grid-header');
+}
+
 
 $(document).ready(function() {
 
