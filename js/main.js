@@ -7,24 +7,6 @@ function drawGrid(configuration, data) {
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
         switch (column.type) {
-            case "trafficLightToolTip":
-                {
-                    column.template = function(dataItem) {
-                        return '<div class="' + trafficLights[dataItem[column.field]] + ' tooltip">&nbsp;</div>';
-                    };
-
-                    /*$("#grid").kendoTooltip({
-                        autoHide: true,
-                        showOn: "mouseenter",
-                        width: 50,
-                        height: 50,
-                        position: "top",
-                        visible: true,
-                        content: kendo.template($("#template").html())
-                    });*/
-
-                }
-                break;
             case "popupTemplate":
                 column.template = function(dataItem) {
                     var template = ("<div class=\"popper-66\"><div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p></div>");
@@ -71,7 +53,6 @@ function drawGrid(configuration, data) {
                     return '<div class="target-progress-67" style="width:' + dataItem[column.field] + '%"></div><div class="target-67" style="left:' + dataItem["target"] + '%"></div>';
                 };
                 break;
-
         }
     });
 
@@ -80,7 +61,6 @@ function drawGrid(configuration, data) {
     });
 
     $("#grid").empty().kendoGrid(configuration);
-
 }
 
 // show the display based on dropdown
@@ -125,7 +105,6 @@ function pseudoHeader() {
     $('.k-grid-header-wrap').clone().prependTo('.k-grid-header');
 }
 
-
 $(document).ready(function() {
 
     $(".use-case-selector").on("change", function(event) {
@@ -134,5 +113,4 @@ $(document).ready(function() {
     });
 
     handleSelection(0);
-
 });
