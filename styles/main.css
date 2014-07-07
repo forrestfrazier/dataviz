@@ -116,3 +116,22 @@ div.k-grid-header {
 .sub-project-66 {
     padding-left: 2em;
 }
+.k-state-selected {
+    background: #eee;
+}
+
+/* GRID 6.7 */
+.k-grid .target-progress-wrapper-67 {
+        position: relative;
+    }
+.k-grid .target-progress-67 {
+    background: pink;
+    height: 20px;
+}
+.k-grid .target-67 {
+    background: #000;
+    height: 20px;
+    position: absolute;
+    top: 1px;
+    width: 2px;
+}
