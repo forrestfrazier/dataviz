@@ -104,17 +104,21 @@ function pseudoHeader(configuration) {
         console.log('add header');
         // replicate, rename and place
         $('.k-grid-header-wrap').clone().addClass('label-grid').removeClass('k-grid-header-wrap').prependTo('.k-grid-header');
-        // remove existing content
-        $('.label-grid th').empty();
-        // iterate through all columns and replace content
-        $().each(function() {
-            // match data-field to pseudoHeader.replaces and add label as text
-            if ($('label-grid th').find("[data-field='" + current + "']")) {
-                $(this).text(configuration.pseudoHeader.label);
+        // array of all headers
+        var headers = $('.label-grid tr').children();
+        // clears text for each header
+        for(var i = 0; i < headers.length; i++){
+            headers[i].textContent = "";
+        }
+        // replaces text with appropriate headers
+        for(var i = 0; i < configuration.pseudoHeader.length; i++){
+            for(var k = 0; k < headers.length; k++){
+                if(headers[k].dataset.field === configuration.pseudoHeader[i].replaces){
+                    headers[k].textContent = configuration.pseudoHeader[i].label;
+                }
             }
-        });
+        }
     }
-
 }
 
 $(document).ready(function() {
