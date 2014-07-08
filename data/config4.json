@@ -9,7 +9,7 @@
         "replaces": "overallMS"
     }, {
         "label": "Ca$h",
-        "replaces": "$(m) Off Track"
+        "replaces": "offTrack"
     }],
     "columns": [{
         "field": "name",
