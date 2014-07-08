@@ -83,6 +83,9 @@ function handleSelection(value) {
     }, {
         config: "data/config5.json",
         data: "data/data5.json"
+    }, {
+        config: "data/config6.json",
+        data: "data/data6.json"
     }, ];
 
     $.getJSON(filePair[value].config)
@@ -107,13 +110,13 @@ function pseudoHeader(configuration) {
         // array of all headers
         var headers = $('.label-grid tr').children();
         // clears text for each header
-        for(var i = 0; i < headers.length; i++){
+        for (var i = 0; i < headers.length; i++) {
             headers[i].textContent = "";
         }
         // replaces text with appropriate headers
-        for(var i = 0; i < configuration.pseudoHeader.length; i++){
-            for(var k = 0; k < headers.length; k++){
-                if(headers[k].dataset.field === configuration.pseudoHeader[i].replaces){
+        for (var i = 0; i < configuration.pseudoHeader.length; i++) {
+            for (var k = 0; k < headers.length; k++) {
+                if (headers[k].dataset.field === configuration.pseudoHeader[i].replaces) {
                     headers[k].textContent = configuration.pseudoHeader[i].label;
                 }
             }
