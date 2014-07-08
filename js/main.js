@@ -7,27 +7,9 @@ function drawGrid(configuration, data) {
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
         switch (column.type) {
-            case "trafficLightToolTip":
-                {
-                    column.template = function(dataItem) {
-                        return '<div class="' + trafficLights[dataItem[column.field]] + ' tooltip">&nbsp;</div>';
-                    };
-
-                    /*$("#grid").kendoTooltip({
-                        autoHide: true,
-                        showOn: "mouseenter",
-                        width: 50,
-                        height: 50,
-                        position: "top",
-                        visible: true,
-                        content: kendo.template($("#template").html())
-                    });*/
-
-                }
-                break;
             case "popupTemplate":
                 column.template = function(dataItem) {
-                    var template = ("<div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p>");
+                    var template = ("<div class=\"popper-66\"><div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p></div>");
                     return template;
                 };
                 break;
@@ -71,7 +53,6 @@ function drawGrid(configuration, data) {
                     return '<div class="target-progress-67" style="width:' + dataItem[column.field] + '%"></div><div class="target-67" style="left:' + dataItem["target"] + '%"></div>';
                 };
                 break;
-
         }
     });
 
@@ -80,7 +61,6 @@ function drawGrid(configuration, data) {
     });
 
     $("#grid").empty().kendoGrid(configuration);
-
 }
 
 // show the display based on dropdown
@@ -110,8 +90,31 @@ function handleSelection(value) {
             $.getJSON(filePair[value].data)
                 .done(function(data) {
                     drawGrid(configuration, data);
+                    pseudoHeader(configuration);
                 });
         });
+}
+
+// create a fake header for column group lables above the existing kendo header
+function pseudoHeader(configuration) {
+    //console.log('build fake header ' + configuration.pseudoHeader);
+    console.log(JSON.parse(JSON.stringify(configuration)));
+    // look at json for fake header info
+    if (configuration.pseudoHeader) {
+        console.log('add header');
+        // replicate, rename and place
+        $('.k-grid-header-wrap').clone().addClass('label-grid').removeClass('k-grid-header-wrap').prependTo('.k-grid-header');
+        // remove existing content
+        $('.label-grid th').empty();
+        // iterate through all columns and replace content
+        $().each(function() {
+            // match data-field to pseudoHeader.replaces and add label as text
+            if ($('label-grid th').find("[data-field='" + current + "']")) {
+                $(this).text(configuration.pseudoHeader.label);
+            }
+        });
+    }
+
 }
 
 $(document).ready(function() {
@@ -122,25 +125,4 @@ $(document).ready(function() {
     });
 
     handleSelection(0);
-
-    // tooltip for 6.6
-    $(".tooltip").each(function() {
-        $(this).kendoTooltip({
-            content: "WTF??? Why don\'t I show?",
-            position: "top",
-            animation: {
-                open: {
-                    effects: "fade:in",
-                    duration: 200
-                },
-                close: {
-                    effects: "fade:in",
-                    reverse: true,
-                    duration: 200
-                }
-            }
-        });
-    });
-
-
 });

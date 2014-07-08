@@ -4,6 +4,13 @@
     "sortable": {
         "mode": "multiple"
     },
+    "pseudoHeader": [{
+        "label": "Overall Trafic Lights",
+        "replaces": "overallMS"
+    }, {
+        "label": "Ca$h",
+        "replaces": "$(m) Off Track"
+    }],
     "columns": [{
         "field": "name",
         "title": "Project",
@@ -13,17 +20,17 @@
         "field": "overallMS",
         "title": "Overall MS",
         "width": "12%",
-        "type": "trafficLightToolTip"
+        "type": "trafficLight"
     }, {
         "field": "overallIM",
         "title": "Overall IM",
         "width": "12%",
-        "type": "trafficLightToolTip"
+        "type": "trafficLight"
     }, {
         "field": "overallDICE",
         "title": "Overall DICE",
         "width": "12%",
-        "type": "trafficLightToolTip"
+        "type": "trafficLight"
     }, {
 
         "field": "offTrack",
@@ -52,8 +59,8 @@
         "attributes": {
             "class": "popup-66"
         },
-        "title": "Temp",
-        "width": "12%",
+        "title": "popup-header-66",
+        "width": "0%",
         "type": "popupTemplate"
     }]
 }
