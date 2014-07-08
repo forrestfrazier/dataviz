@@ -1,0 +1,70 @@
+{
+    "height": 500,
+    "sortable": {
+        "mode": "multiple"
+    },
+    "columns": [{
+        "field": "category",
+        "title": "",
+        "width": "5%",
+        "headerTemplate": ""
+    }, {
+        "field": "rm",
+        "title": "RM",
+        "width": "3%"
+    }, {
+        "field": "name",
+        "title": "",
+        "width": "7%",
+        "headerTemplate": ""
+    }, {
+        "field": "owner",
+        "title": "RM Owner",
+        "width": "10%"
+    }, {
+        "field": "savings",
+        "title": "Rec.<br>Savings",
+        "attributes": {
+            "class": "target-progress-wrapper-68"
+        },
+        "width": "8%",
+        "type": "bulletBar"
+    }, {
+        "field": "totalPlan1",
+        "title": "Total Plan $(m)",
+        "width": "15%",
+        "attributes": {
+            "class": "total-66"
+        }
+    }, {
+        "field": "cashImpact",
+        "title": "Rec.<br>Cash Impact",
+        "attributes": {
+            "class": "target-progress-wrapper-68"
+        },
+        "width": "10%",
+        "type": "bulletBar"
+    }, {
+        "field": "totalPlan2",
+        "title": "Total Plan $(m)",
+        "width": "15%",
+        "attributes": {
+            "class": "total-66"
+        }
+    }, {
+        "field": "reduction",
+        "title": "FTE<br>Reduction",
+        "attributes": {
+            "class": "target-progress-wrapper-68"
+        },
+        "width": "12%",
+        "type": "bulletBar"
+    }, {
+        "field": "totalPlan3",
+        "title": "Total Plan $(m)",
+        "width": "10%",
+        "attributes": {
+            "class": "total-66"
+        }
+    }]
+}

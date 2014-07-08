@@ -1,9 +1,6 @@
 var trafficLights = ["green", "yellow", "red"];
 
 function drawGrid(configuration, data) {
-    var count = 0;
-    var temp = 0;
-    var names = [];
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
         switch (column.type) {
@@ -94,6 +91,9 @@ function handleSelection(value) {
                 .done(function(data) {
                     drawGrid(configuration, data);
                     pseudoHeader(configuration);
+                    if(value === "6"){
+                        $("#grid").data("kendoGrid").dataSource.group({ field: "group" });
+                    }
                 });
         });
 }
