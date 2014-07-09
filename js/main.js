@@ -79,7 +79,7 @@ function handleSelection(value) {
                 .done(function(data) {
                     drawGrid(configuration, data);
                     pseudoHeader(configuration);
-                    if (value === "6") {
+                    if (configuration.chartType === "group") {
                         $("#grid").data("kendoGrid").dataSource.group({
                             field: "group"
                         });

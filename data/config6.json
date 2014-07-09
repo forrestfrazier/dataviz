@@ -1,4 +1,5 @@
 {
+    "chartType": "group",
     "height": 500,
     "sortable": {
         "mode": "multiple"
