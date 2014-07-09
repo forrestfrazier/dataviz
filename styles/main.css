@@ -161,6 +161,17 @@ div.k-grid-header {
 
 /* GRID 6.8 */
 
-.total-68 {
-
+.k-grid .target-progress-wrapper-68 {
+        position: relative;
+    }
+.k-grid .target-progress-68 {
+    background: lightskyblue;
+    height: 20px;
+}
+.k-grid .target-68 {
+    background: #000;
+    height: 20px;
+    position: absolute;
+    top: 1px;
+    width: 2px;
 }

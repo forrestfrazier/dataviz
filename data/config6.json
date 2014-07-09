@@ -22,13 +22,13 @@
         "title": "RM Owner",
         "width": "10%"
     }, {
-        "field": "savings",
+        "field": "savings.Actual",
         "title": "Rec.<br>Savings",
         "attributes": {
             "class": "target-progress-wrapper-68"
         },
         "width": "8%",
-        "type": "bulletBar"
+        "type": "savingsBar"
     }, {
         "field": "totalPlan1",
         "title": "Total Plan $(m)",
@@ -37,13 +37,13 @@
             "class": "total-66"
         }
     }, {
-        "field": "cashImpact",
+        "field": "cashImpact.Actual",
         "title": "Rec.<br>Cash Impact",
         "attributes": {
             "class": "target-progress-wrapper-68"
         },
         "width": "10%",
-        "type": "bulletBar"
+        "type": "cashImpactBar"
     }, {
         "field": "totalPlan2",
         "title": "Total Plan $(m)",
@@ -52,13 +52,13 @@
             "class": "total-66"
         }
     }, {
-        "field": "reduction",
+        "field": "reduction.Actual",
         "title": "FTE<br>Reduction",
         "attributes": {
             "class": "target-progress-wrapper-68"
         },
         "width": "12%",
-        "type": "bulletBar"
+        "type": "reductionBar"
     }, {
         "field": "totalPlan3",
         "title": "Total Plan $(m)",
