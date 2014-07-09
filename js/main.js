@@ -1,9 +1,6 @@
 var trafficLights = ["green", "yellow", "red"];
 
 function drawGrid(configuration, data) {
-    var count = 0;
-    var temp = 0;
-    var names = [];
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
         switch (column.type) {
@@ -53,6 +50,21 @@ function drawGrid(configuration, data) {
                     return '<div class="target-progress-67" style="width:' + dataItem[column.field] + '%"></div><div class="target-67" style="left:' + dataItem["target"] + '%"></div>';
                 };
                 break;
+            case "savingsBar":
+                column.template = function(dataItem) {
+                    return '<div class="target-progress-68" style="width:' + dataItem[column.field] + '%"></div><div class="target-68" style="left:' + dataItem["savings.Planned"] + '%"></div>';
+                };
+                break;
+            case "cashImpactBar":
+                column.template = function(dataItem) {
+                    return '<div class="target-progress-68" style="width:' + dataItem[column.field] + '%"></div><div class="target-68" style="left:' + dataItem["cashImpact.Planned"] + '%"></div>';
+                };
+                break;
+            case "reductionBar":
+                column.template = function(dataItem) {
+                    return '<div class="target-progress-68" style="width:' + dataItem[column.field] + '%"></div><div class="target-68" style="left:' + dataItem["reduction.Planned"] + '%"></div>';
+                };
+                break;
         }
     });
 
@@ -83,6 +95,9 @@ function handleSelection(value) {
     }, {
         config: "data/config5.json",
         data: "data/data5.json"
+    }, {
+        config: "data/config6.json",
+        data: "data/data6.json"
     }, ];
 
     $.getJSON(filePair[value].config)
@@ -91,14 +106,18 @@ function handleSelection(value) {
                 .done(function(data) {
                     drawGrid(configuration, data);
                     pseudoHeader(configuration);
+                    if (value === "6") {
+                        $("#grid").data("kendoGrid").dataSource.group({
+                            field: "group"
+                        });
+                    }
                 });
         });
 }
 
 // create a fake header for column group lables above the existing kendo header
 function pseudoHeader(configuration) {
-    //console.log('build fake header ' + configuration.pseudoHeader);
-    console.log(JSON.parse(JSON.stringify(configuration)));
+    //console.log(JSON.parse(JSON.stringify(configuration)));
     // look at json for fake header info
     if (configuration.pseudoHeader) {
         console.log('add header');
