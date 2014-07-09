@@ -33,8 +33,8 @@ function drawGrid(configuration, data) {
                 break;
             case "bulletBar":
                 column.template = function(dataItem) {
-                    var actual = column.field + ".Actual";
-                    var planned = column.field + ".Planned";
+                    var actual = column.field + ".Actual",
+                        planned = column.field + ".Planned";
                     return '<div class="target-progress-67" style="width:' + dataItem[actual] + '%"></div><div class="target-67" style="left:' + dataItem[planned] + '%"></div>';
                 };
                 break;
