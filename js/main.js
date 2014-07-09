@@ -20,24 +20,10 @@ function drawGrid(configuration, data) {
                     return '<div class="blue-vlight" style="width: ' + dataItem[column.field] + '%">&nbsp;</div>';
                 };
                 break;
-            case "completedTextBar":
+            case "textBar":
                 column.template = function(dataItem) {
-                    return '<div class="text-wrapper"><span>' + dataItem[column.field] + '%</span><span class="cost">$' + dataItem["completedCost"] + 'M</span></div><div class="bar-wrapper"><div style="width: ' + dataItem[column.field] + '%">&nbsp;</div></div>';
-                };
-                break;
-            case "onTrackTextBar":
-                column.template = function(dataItem) {
-                    return '<div class="text-wrapper"><span>' + dataItem[column.field] + '%</span><span class="cost">$' + dataItem["onTrackCost"] + 'M</span></div><div class="bar-wrapper"><div style="width: ' + dataItem[column.field] + '%">&nbsp;</div></div>';
-                };
-                break;
-            case "atRiskTextBar":
-                column.template = function(dataItem) {
-                    return '<div class="text-wrapper"><span>' + dataItem[column.field] + '%</span><span class="cost">$' + dataItem["atRiskCost"] + 'M</span></div><div class="bar-wrapper"><div style="width: ' + dataItem[column.field] + '%">&nbsp;</div></div>';
-                };
-                break;
-            case "offTrackTextBar":
-                column.template = function(dataItem) {
-                    return '<div class="text-wrapper"><span>' + dataItem[column.field] + '%</span><span class="cost">$' + dataItem["offTrackCost"] + 'M</span></div><div class="bar-wrapper"><div style="width: ' + dataItem[column.field] + '%">&nbsp;</div></div>';
+                    var cost = column.field + ".Cost";
+                    return '<div class="text-wrapper"><span>' + dataItem[column.field] + '%</span><span class="cost">$' + dataItem[cost] + 'M</span></div><div class="bar-wrapper"><div style="width: ' + dataItem[column.field] + '%">&nbsp;</div></div>';
                 };
                 break;
             case "projectNameType":
@@ -47,22 +33,9 @@ function drawGrid(configuration, data) {
                 break;
             case "bulletBar":
                 column.template = function(dataItem) {
-                    return '<div class="target-progress-67" style="width:' + dataItem[column.field] + '%"></div><div class="target-67" style="left:' + dataItem["target"] + '%"></div>';
-                };
-                break;
-            case "savingsBar":
-                column.template = function(dataItem) {
-                    return '<div class="target-progress-68" style="width:' + dataItem[column.field] + '%"></div><div class="target-68" style="left:' + dataItem["savings.Planned"] + '%"></div>';
-                };
-                break;
-            case "cashImpactBar":
-                column.template = function(dataItem) {
-                    return '<div class="target-progress-68" style="width:' + dataItem[column.field] + '%"></div><div class="target-68" style="left:' + dataItem["cashImpact.Planned"] + '%"></div>';
-                };
-                break;
-            case "reductionBar":
-                column.template = function(dataItem) {
-                    return '<div class="target-progress-68" style="width:' + dataItem[column.field] + '%"></div><div class="target-68" style="left:' + dataItem["reduction.Planned"] + '%"></div>';
+                    var actual = column.field + ".Actual",
+                        planned = column.field + ".Planned";
+                    return '<div class="target-progress-67" style="width:' + dataItem[actual] + '%"></div><div class="target-67" style="left:' + dataItem[planned] + '%"></div>';
                 };
                 break;
         }
@@ -106,7 +79,7 @@ function handleSelection(value) {
                 .done(function(data) {
                     drawGrid(configuration, data);
                     pseudoHeader(configuration);
-                    if (value === "6") {
+                    if (configuration.chartType === "group") {
                         $("#grid").data("kendoGrid").dataSource.group({
                             field: "group"
                         });
