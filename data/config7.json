@@ -1,27 +1,68 @@
 {
+    "chartType": "chart",
+    "height": 500,
+    "dataSource": {
+        "transport": {
+            "read": {
+                "url": "data/data7.json",
+                "dataType": "json"
+            }
+        },
+        "sort": {
+            "field": "date",
+            "dir": "asc"
+        }
+    },
     "title": {
-        "text": "Olympic Medals won by USA"
+        "text": "Program Name"
     },
     "legend": {
-        "visible": false
+        "position": "left"
+    },
+    "sort": {
+        "field": "year",
+        "dir": "asc"
     },
     "seriesDefaults": {
-        "type": "column",
-        "stack": true
+        "type": "column"
+    },
+    "series": [{
+        "field": "actual",
+        "name": "Actual to date",
+        "color": "#00bae2"
+    }, {
+        "field": "locked",
+        "name": "Locked In",
+        "color": "#b1eaf6"
+    }, {
+        "field": "target",
+        "name": "Target",
+        "color": "#000000"
+    }, {
+        "field": "planUpdated",
+        "name": "Plan Updated",
+        "color": "#666666"
+    }, {
+        "field": "plan",
+        "name": "Plan",
+        "color": "#cccccc"
+    }],
+    "categoryAxis": {
+        "field": "date",
+        "labels": {
+            "format": "mmm/yy"
+        }
     },
     "valueAxis": {
-        "max": 180,
+        "labels": {
+            "format": "N0"
+        },
+        "majorUnit": 600,
         "line": {
-            "visible": false
+            "visible": true
         },
         "minorGridLines": {
             "visible": true
-        }
-    },
-    "categoryAxis": {
-        "categories": [1952, 1956, 1960, 1964, 1968, 1972, 1976, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012],
-        "majorGridLines": {
-            "visible": false
         }
     },
     "tooltip": {
