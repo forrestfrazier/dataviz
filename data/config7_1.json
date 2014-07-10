@@ -6,7 +6,10 @@
     "columns": [{
         "field": "projectNum",
         "title": "Project",
-        "width": "5%"
+        "width": "5%",
+        "attributes": {
+            "class": "project-number-71"
+        }
     }, {
         "field": "projectName",
         "title": "",

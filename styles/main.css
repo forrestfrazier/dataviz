@@ -177,7 +177,10 @@ div.k-grid-header {
 }
 
 /* GRID 7.1 */
-
+.k-grid .project-number-71 {
+    padding-right: .5em;
+    text-align: right;
+}
 .k-grid .target-wrapper-71 {
     position: relative;
 }
@@ -196,7 +199,7 @@ div.k-grid-header {
     height: 20px;
     position: absolute;
     top: 1px;
-    width: 0px;
+    width: 0;
 
     border-right-width:2px;
     border-right-style:dotted;
@@ -211,6 +214,7 @@ div.k-grid-header {
 .k-grid .execution-roadmaps-71{
     text-align: right;
     color: #B5A386;
+    padding-right: .5em;
 }
 .k-grid .execution-wrapper-71 {
     position: relative;
@@ -229,6 +233,7 @@ div.k-grid-header {
 }
 .k-grid .targetGap-71{
     color: #FFA347;
+    padding-left: .5em;
 }
 .k-grid .gapBackground-71{
     background: #FFA347;
@@ -241,5 +246,7 @@ div.k-grid-header {
 }
 .k-grid .execution-roadmapsToRoadmaps-71{
     color: #E2D8C9;
+    padding-right: .5em;
     text-align: center;
+
 }
