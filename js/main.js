@@ -2,7 +2,11 @@ var trafficLights = ["green", "yellow", "red"];
 
 function drawChart(configuration, data) {
     $("#chart").kendoChart(configuration);
-    console.log(data);
+    $(".k-chart").data("kendoChart").bind("seriesClick", function(e) {
+        //console.log(e);
+        console.log('Send data to REST server to get details for ' + e.category);
+    });
+
 
 }
 
