@@ -1,6 +1,6 @@
 var trafficLights = ["green", "yellow", "red"];
 
-function drawGrid(configuration, data) {
+function drawGrid(configuration, data, fileUsed) {
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
         switch (column.type) {
@@ -33,9 +33,29 @@ function drawGrid(configuration, data) {
                 break;
             case "bulletBar":
                 column.template = function(dataItem) {
-                    var actual = column.field + ".Actual",
-                        planned = column.field + ".Planned";
-                    return '<div class="target-progress-67" style="width:' + dataItem[actual] + '%"></div><div class="target-67" style="left:' + dataItem[planned] + '%"></div>';
+                    var actual = column.field + "Actual",
+                        planned = column.field + "Planned";
+                    switch(fileUsed){
+                        case "5": return '<div class="target-progress-67" style="width:' + dataItem[actual] + '%"></div><div class="target-67" style="left:' + dataItem[planned] + '%"></div>'; break;
+                        case "6": return '<div class="target-progress-68" style="width:' + dataItem[actual] + '%"></div><div class="target-68" style="left:' + dataItem[planned] + '%"></div>'; break;
+                        case "8": return '<div class="target-progress-71" style="width:' + dataItem[actual] + '%"></div><div class="target-71" style="left:' + dataItem[planned] + '%"></div>'; break;
+                    }
+                };
+                break;
+            case "stackedGraph":
+                column.template = function(dataItem) {
+                    var bar1 = dataItem[(column.field + "Roadmaps")],
+                        bar2 = dataItem[(column.field + "RoadmapsToRoadmaps")],
+                        target = dataItem[(column.field + "Target")];
+                    return '<div class="stackGraph-bar2-71" style="width:' + bar1 + '%"></div><div class="stackGraph-bar1-71" style="width:' + bar2 + '%"></div><div class="execution-target-71" style="left:' + target + '%"></div>';
+                };
+                break;
+            case "gapBar":
+                column.template = function(dataItem) {
+                    var target = dataItem[(column.field + "Target")],
+                        actual = dataItem[(column.field + "RoadmapsToRoadmaps")],
+                        gap = Math.abs(target-actual);
+                    return '<div class="gapWhite-71" style="width:' + (100-gap) + '%"></div><div class="gapBackground-71" style="width:100%"></div>';
                 };
                 break;
         }
@@ -71,13 +91,19 @@ function handleSelection(value) {
     }, {
         config: "data/config6.json",
         data: "data/data6.json"
-    }, ];
+    }, {
+        config: "data/config7.json",
+        data: "data/data7.json"
+    }, {
+        config: "data/config7_1.json",
+        data: "data/data7_1.json"
+    }];
 
     $.getJSON(filePair[value].config)
         .done(function(configuration) {
             $.getJSON(filePair[value].data)
                 .done(function(data) {
-                    drawGrid(configuration, data);
+                    drawGrid(configuration, data, value);
                     pseudoHeader(configuration);
                     if (configuration.chartType === "group") {
                         $("#grid").data("kendoGrid").dataSource.group({
