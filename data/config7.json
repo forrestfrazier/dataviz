@@ -24,7 +24,8 @@
         "dir": "asc"
     },
     "seriesDefaults": {
-        "type": "column"
+        "type": "column",
+        "stack": false
     },
     "series": [{
         "field": "actual",
@@ -59,7 +60,7 @@
         },
         "majorUnit": 600,
         "line": {
-            "visible": true
+            "visible": false
         },
         "minorGridLines": {
             "visible": true
