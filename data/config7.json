@@ -1,0 +1,73 @@
+{
+    "chartType": "chart",
+    "height": 500,
+    "dataSource": {
+        "transport": {
+            "read": {
+                "url": "data/data7.json",
+                "dataType": "json"
+            }
+        },
+        "sort": {
+            "field": "date",
+            "dir": "asc"
+        }
+    },
+    "title": {
+        "text": "Program Name"
+    },
+    "legend": {
+        "position": "left"
+    },
+    "sort": {
+        "field": "year",
+        "dir": "asc"
+    },
+    "seriesDefaults": {
+        "type": "column",
+        "stack": false
+    },
+    "series": [{
+        "field": "actual",
+        "name": "Actual to date",
+        "color": "#00bae2"
+    }, {
+        "field": "locked",
+        "name": "Locked In",
+        "color": "#b1eaf6"
+    }, {
+        "field": "target",
+        "name": "Target",
+        "color": "#000000"
+    }, {
+        "field": "planUpdated",
+        "name": "Plan Updated",
+        "color": "#666666"
+    }, {
+        "field": "plan",
+        "name": "Plan",
+        "color": "#cccccc"
+    }],
+    "categoryAxis": {
+        "field": "date",
+        "labels": {
+            "format": "mmm/yy"
+        }
+    },
+    "valueAxis": {
+        "labels": {
+            "format": "N0"
+        },
+        "majorUnit": 600,
+        "line": {
+            "visible": false
+        },
+        "minorGridLines": {
+            "visible": true
+        }
+    },
+    "tooltip": {
+        "visible": true,
+        "template": "#= series.name #: #= value #"
+    }
+}

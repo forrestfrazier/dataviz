@@ -1,0 +1,73 @@
+[{
+    "date": "01/30/2014",
+    "actual": 100,
+    "planUpdated": 160,
+    "plan": 160,
+    "target": 160
+}, {
+    "date": "02/30/2014",
+    "actual": 200,
+    "planUpdated": 180,
+    "plan": 210,
+    "target": 220
+}, {
+    "date": "03/30/2014",
+    "actual": 280,
+    "planUpdated": 320,
+    "plan": 340,
+    "target": 350
+}, {
+    "date": "04/30/2014",
+    "actual": 100,
+    "planUpdated": 200,
+    "plan": 300,
+    "target": 400
+}, {
+    "date": "05/30/2014",
+    "actual": 100,
+    "planUpdated": 200,
+    "plan": 300,
+    "target": 400
+}, {
+    "date": "06/30/2014",
+    "actual": 100,
+    "planUpdated": 200,
+    "plan": 300,
+    "target": 400
+}, {
+    "date": "07/30/2014",
+    "locked": 100,
+    "planUpdated": 200,
+    "plan": 300,
+    "target": 400
+}, {
+    "date": "08/30/2014",
+    "locked": 100,
+    "planUpdated": 200,
+    "plan": 300,
+    "target": 400
+}, {
+    "date": "09/30/2014",
+    "locked": 100,
+    "planUpdated": 200,
+    "plan": 300,
+    "target": 400
+}, {
+    "date": "10/30/2014",
+    "locked": 100,
+    "planUpdated": 200,
+    "plan": 300,
+    "target": 400
+}, {
+    "date": "11/30/2014",
+    "locked": 100,
+    "planUpdated": 200,
+    "plan": 300,
+    "target": 400
+}, {
+    "date": "12/30/2014",
+    "locked": 100,
+    "planUpdated": 200,
+    "plan": 300,
+    "target": 400
+}]

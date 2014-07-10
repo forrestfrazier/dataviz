@@ -1,5 +1,15 @@
 var trafficLights = ["green", "yellow", "red"];
 
+function drawChart(configuration, data) {
+    $("#chart").kendoChart(configuration);
+    $(".k-chart").data("kendoChart").bind("seriesClick", function(e) {
+        //console.log(e);
+        console.log('Send data to REST server to get details for ' + e.category);
+    });
+
+
+}
+
 function drawGrid(configuration, data) {
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
@@ -45,6 +55,7 @@ function drawGrid(configuration, data) {
         data: data
     });
 
+    // empty the grid and fire up a new one
     $("#grid").empty().kendoGrid(configuration);
 }
 
@@ -71,18 +82,33 @@ function handleSelection(value) {
     }, {
         config: "data/config6.json",
         data: "data/data6.json"
+    }, {
+        config: "data/config7.json",
+        data: "data/data7.json"
     }, ];
 
     $.getJSON(filePair[value].config)
         .done(function(configuration) {
             $.getJSON(filePair[value].data)
                 .done(function(data) {
-                    drawGrid(configuration, data);
-                    pseudoHeader(configuration);
-                    if (configuration.chartType === "group") {
-                        $("#grid").data("kendoGrid").dataSource.group({
-                            field: "group"
-                        });
+                    // determine chart or grid
+                    if (configuration.chartType === "chart") {
+                        // empty and hide the default grid instance
+                        $('#chart').show();
+                        $('#grid').hide();
+                        // get the config and data for the chart and build it
+                        drawChart(configuration, data);
+
+                    } else {
+                        $('#chart').hide();
+                        $('#grid').show();
+                        drawGrid(configuration, data);
+                        pseudoHeader(configuration);
+                        if (configuration.chartType === "group") {
+                            $("#grid").data("kendoGrid").dataSource.group({
+                                field: "group"
+                            });
+                        }
                     }
                 });
         });
