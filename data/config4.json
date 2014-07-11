@@ -5,7 +5,7 @@
         "mode": "multiple"
     },
     "pseudoHeader": [{
-        "label": "Overall Trafic Lights",
+        "label": "Overall Traffic Lights",
         "replaces": "overallMS"
     }, {
         "label": "Ca$h",
@@ -48,7 +48,6 @@
         },
         "width": "12%"
     }, {
-
         "field": "total",
         "title": "$(m) Total",
         "attributes": {

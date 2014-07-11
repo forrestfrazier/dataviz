@@ -6,7 +6,16 @@ function drawGrid(configuration, data, fileUsed) {
         switch (column.type) {
             case "popupTemplate":
                 column.template = function(dataItem) {
-                    var template = ("<div class=\"popper-66\"><div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p></div>");
+                    var template;
+                    switch(fileUsed){
+                        case "4": template = ("<div class=\"popper-66\"><div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p></div>"); break;
+                        //case "8": template = ("<div class=\"popper-71\"><div>" + "T" + "</div></div>"); break;
+                        case "8": template = ("<div class=\"popper-71\"><div class=\"popup-name-71\">" + dataItem["projectNum"] + " " + dataItem["projectName"] + "<hr></div><div class=\"popup-column-left-71\">Completed <div class=\"popup-number-71\">" +
+                        dataItem["completedActual"] + "</div><br>Plan updated <div class=\"popup-number-71\">" + dataItem["completedPlanned"] + "</div><hr><div class=\"popup-results-71\">Gap to Plan <div class=\"popup-number-71\">" +
+                        (dataItem["completedActual"]-dataItem["completedPlanned"]) + "</div></div></div><div class=\"popup-column-right-71\" >Execution Roadmaps<div class=\"popup-number-71\">" + dataItem["executionRoadmaps"] +
+                        "</div> Roadmaps to Roadmaps <div class=\"popup-number-71\">" + dataItem["executionRoadmapsToRoadmaps"] + "</div>Target<div class=\"popup-number-71\">" + dataItem["executionTarget"] +
+                        "</div><hr><div class=\"popup-results-71\">Gap to Target<div class=\"popup-number-71\">" + (dataItem["executionRoadmapsToRoadmaps"]-dataItem["executionTarget"]) + "</div></div></div></div>"); break;
+                    }
                     return template;
                 };
                 break;
@@ -36,9 +45,9 @@ function drawGrid(configuration, data, fileUsed) {
                     var actual = column.field + "Actual",
                         planned = column.field + "Planned";
                     switch(fileUsed){
-                        case "5": return '<div class="target-progress-67" style="width:' + dataItem[actual] + '%"></div><div class="target-67" style="left:' + dataItem[planned] + '%"></div>'; break;
-                        case "6": return '<div class="target-progress-68" style="width:' + dataItem[actual] + '%"></div><div class="target-68" style="left:' + dataItem[planned] + '%"></div>'; break;
-                        case "8": return '<div class="target-progress-71" style="width:' + dataItem[actual] + '%"></div><div class="target-71" style="left:' + dataItem[planned] + '%"></div>'; break;
+                        case "5": return '<div class="target-progress-67" style="width:' + dataItem[actual] + '%"></div><div class="target-67" style="left:' + dataItem[planned] + '%"></div>';
+                        case "6": return '<div class="target-progress-68" style="width:' + dataItem[actual] + '%"></div><div class="target-68" style="left:' + dataItem[planned] + '%"></div>';
+                        case "8": return '<div class="target-progress-71" style="width:' + dataItem[actual] + '%"></div><div class="target-71" style="left:' + dataItem[planned] + '%"></div>';
                     }
                 };
                 break;

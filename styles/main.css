@@ -250,3 +250,52 @@ div.k-grid-header {
     text-align: center;
 
 }
+
+/* GRID 7.1 POPUP */
+.popup-71 {
+    display: none;
+    width: 0;
+}
+.k-state-selected .popup-71 {
+    display: block;
+}
+.k-state-selected .popup-71 .popper-71 {
+    padding-left: 1%;
+    padding-right: 1%;
+    background: rgba(255,255,255,.9);
+    border: 1px solid #ccc;
+    display: block;
+    height: 150px;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -50px;
+    position: fixed;
+    text-align: center;
+    width: 250px;
+    z-index: 2;
+}
+.popup-column-left-71 {
+    width: 35%;
+    padding-top: 8%;
+    text-align: left;
+    float: left;
+}
+.popup-column-right-71 {
+    width: 60%;
+    text-align: left;
+    float: right;
+}
+.popup-number-71 {
+    font-weight: bold;
+    text-align: right;
+    float: right;
+}
+.popup-results-71 {
+    color: #A4A4A4;
+}
+.popup-name-71 {
+    text-align: left;
+}
+[data-title="popup-header-71"] {
+    width: 0;
+}
