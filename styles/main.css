@@ -250,3 +250,6 @@ div.k-grid-header {
     text-align: center;
 
 }
+#chart.parent-chart {
+    background: pink
+}

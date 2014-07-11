@@ -4,12 +4,15 @@ function drawChart(configuration, data) {
     $('#grid').hide();
     $("#chart").kendoChart(configuration);
     $(".k-chart").data("kendoChart").bind("seriesClick", function(e) {
-        //console.log(e);
-        console.log('Send data to REST server to get details for ' + e.category);
+        // identify this chart as a parent to the spawned child chart
+        $("#chart").addClass('parent-chart');
+        // change opacity for non-selected columns
 
-        // now show the corrisponding grid under the chart
+        console.log('Send data to REST server to get details for ' + e.category);
+        // on data return show the corrisponding grid under the chart
         $('#grid').show();
-        handleSelection(8);
+        handleSelection(8); // this will be replaced with the acutal config/data json
+
 
     });
 }
