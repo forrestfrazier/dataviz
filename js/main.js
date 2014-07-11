@@ -21,10 +21,10 @@ function drawGrid(configuration, data, fileUsed) {
         switch (column.type) {
             case "popupTemplate":
                 column.template = function(dataItem) {
-                    var template = ("<div class=\"popper-66\"><div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p></div>");
-                    return template;
-                };
-                break;
+                var template = ("<div class=\"popper-66\"><div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p></div>");
+                return template;
+            };
+            break;
             case "trafficLight":
                 column.template = function(dataItem) {
                     return '<div class="' + trafficLights[dataItem[column.field]] + '">&nbsp;</div>';
