@@ -97,7 +97,7 @@
             "class": "popup-71"
         },
         "title": "popup-header-71",
-        "width": "0%",
+        "width": 0,
         "type": "popupTemplate",
         "sortable": false
     }]

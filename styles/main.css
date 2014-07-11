@@ -252,12 +252,13 @@ div.k-grid-header {
 }
 
 /* GRID 7.1 POPUP */
-.popup-71 {
+.popup-71, [data-title="popup-header-71"] {
     display: none;
     width: 0;
 }
 .k-state-selected .popup-71 {
     display: block;
+    width: 250px;
 }
 .k-state-selected .popup-71 .popper-71 {
     padding-left: 1%;
@@ -295,7 +296,4 @@ div.k-grid-header {
 }
 .popup-name-71 {
     text-align: left;
-}
-[data-title="popup-header-71"] {
-    width: 0;
 }
