@@ -177,7 +177,7 @@ div.k-grid-header {
 }
 
 /* GRID 7.1 */
-.k-grid .project-number-71 {
+.k-grid .project-number-71, [data-title="projectNum"]  {
     padding-right: .5em;
     text-align: right;
 }
