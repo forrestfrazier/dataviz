@@ -1,6 +1,18 @@
 var trafficLights = ["green", "yellow", "red"];
+var classToAdd = "";
 
 function drawGrid(configuration, data, fileUsed) {
+    switch(fileUsed){
+        case 0: classToAdd = "grid-6.1-Text"; break;
+        case "1": classToAdd = "grid-6.1"; break;
+        case "2": classToAdd = "grid-6.3"; break;
+        case "3": classToAdd = "grid-6.5"; break;
+        case "4": classToAdd = "grid-6.6"; break;
+        case "5": classToAdd = "grid-6.7"; break;
+        case "6": classToAdd = "grid-6.8"; break;
+        case "8": classToAdd = "grid-7.1"; break;
+    }
+    if(classToAdd !== ""){ $("#grid").addClass(classToAdd); }
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
         switch (column.type) {
@@ -9,7 +21,6 @@ function drawGrid(configuration, data, fileUsed) {
                     var template;
                     switch(fileUsed){
                         case "4": template = ("<div class=\"popper-66\"><div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p></div>"); break;
-                    //case "8": template = ("<div class=\"popper-71\"><div>" + "T" + "</div></div>"); break;
                     case "8":
                         template = ("<div class=\"popper-71\"><div class=\"popup-name-71\">" + dataItem["projectNum"] + " " + dataItem["projectName"] + "<hr></div><div class=\"popup-column-left-71\">Completed <div class=\"popup-number-71\">" +
                             dataItem["completedActual"] + "</div><br>Plan updated <div class=\"popup-number-71\">" + dataItem["completedPlanned"] + "</div><hr><div class=\"popup-results-71\">Gap to Plan <div class=\"popup-number-71\">" +
@@ -152,8 +163,8 @@ function pseudoHeader(configuration) {
 }
 
 $(document).ready(function() {
-
     $(".use-case-selector").on("change", function(event) {
+        if(classToAdd !== ""){$("#grid").removeClass(classToAdd); classToAdd = ""; }
         var el = event.target;
         handleSelection(el.options[el.selectedIndex].value);
     });
