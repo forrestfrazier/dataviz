@@ -175,3 +175,78 @@ div.k-grid-header {
     top: 1px;
     width: 2px;
 }
+
+/* GRID 7.1 */
+.k-grid .project-number-71 {
+    padding-right: .5em;
+    text-align: right;
+}
+.k-grid .target-wrapper-71 {
+    position: relative;
+}
+.k-grid .target-progress-71 {
+    background: lightskyblue;
+    height: 20px;
+}
+.k-grid .target-71 {
+    background: #000;
+    height: 20px;
+    position: absolute;
+    top: 1px;
+    width: 2px;
+}
+.k-grid .execution-target-71{
+    height: 20px;
+    position: absolute;
+    top: 1px;
+    width: 0;
+
+    border-right-width:2px;
+    border-right-style:dotted;
+    border-right-color:#000;
+}
+.k-grid .completedText-71{
+    color: lightskyblue;
+}
+.k-grid .completed-planned-71{
+    text-align: right;
+}
+.k-grid .execution-roadmaps-71{
+    text-align: right;
+    color: #B5A386;
+    padding-right: .5em;
+}
+.k-grid .execution-wrapper-71 {
+    position: relative;
+}
+.k-grid .stackGraph-bar1-71{
+    background: #E2D8C9;
+    height: 20px;
+}
+.k-grid .stackGraph-bar2-71{
+    background: #B5A386;
+    height: 20px;
+    position:absolute;
+}
+.k-grid .targetGap-wrapper-71{
+    position: relative;
+}
+.k-grid .targetGap-71{
+    color: #FFA347;
+    padding-left: .5em;
+}
+.k-grid .gapBackground-71{
+    background: #FFA347;
+    height: 20px;
+}
+.k-grid .gapWhite-71{
+    background: white;
+    height: 20px;
+    position: absolute;
+}
+.k-grid .execution-roadmapsToRoadmaps-71{
+    color: #E2D8C9;
+    padding-right: .5em;
+    text-align: center;
+
+}
