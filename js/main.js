@@ -1,7 +1,7 @@
 var trafficLights = ["green", "yellow", "red"];
 var classToAdd = "";
 
-function drawChart(configuration, data) {
+function drawChart(configuration, data, fileUsed) {
     $('#grid').hide();
     $("#chart").kendoChart(configuration);
     $(".k-chart").data("kendoChart").bind("seriesClick", function(e) {
@@ -10,7 +10,7 @@ function drawChart(configuration, data) {
 
         // now show the corrisponding grid under the chart
         $('#grid').show();
-        handleSelection(8);
+        handleSelection("8");
 
     });
 }
