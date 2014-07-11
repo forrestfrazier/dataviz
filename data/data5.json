@@ -4,32 +4,32 @@
     "owner": "John Smith",
     "total2014": 98,
     "total2015": 101,
-    "target.Planned": 100,
-    "target.Actual": 95
+    "targetPlanned": 100,
+    "targetActual": 95
 }, {
     "name": "1.1 Sub Project",
     "treeType": "sub-project",
     "owner": "John Smith",
     "total2014": 210,
     "total2015": 119,
-    "target.Planned": 75,
-    "target.Actual": 60
+    "targetPlanned": 75,
+    "targetActual": 60
 }, {
     "name": "1.2 Sub Project",
     "treeType": "sub-project",
     "owner": "John Smith",
     "total2014": 98,
     "total2015": 101,
-    "target.Planned": 80,
-    "target.Actual": 55
+    "targetPlanned": 80,
+    "targetActual": 55
 }, {
     "name": "2.0 Project",
     "treeType": "project",
     "owner": "John Smith",
     "total2014": 98,
     "total2015": 101,
-    "target.Planned": 70,
-    "target.Actual": 45
+    "targetPlanned": 70,
+    "targetActual": 45
 }, {
     "name": "2.1 Sub Project",
     "treeType": "sub-project",
@@ -40,8 +40,8 @@
     "offTrack": 30,
     "atRisk": 40,
     "total": 70,
-    "target.Planned": 40,
-    "target.Actual": 20
+    "targetPlanned": 40,
+    "targetActual": 20
 }, {
     "number": "5.1.1",
     "name": "Establish Call",

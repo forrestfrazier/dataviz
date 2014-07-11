@@ -1,0 +1,85 @@
+{
+    "height": 500,
+    "sortable": {
+        "mode": "multiple"
+    },
+    "columns": [{
+        "field": "projectNum",
+        "title": "Project",
+        "width": "5%",
+        "attributes": {
+            "class": "project-number-71"
+        }
+    }, {
+        "field": "projectName",
+        "title": "",
+        "width": "8%",
+        "headerTemplate": ""
+    }, {
+        "field": "completedActual",
+        "title": "",
+        "width": "1%",
+        "attributes": {
+            "class": "completedText-71"
+        },
+        "headerTemplate": ""
+    }, {
+        "field": "completed",
+        "title": "Completed",
+        "attributes": {
+            "class": "target-wrapper-71"
+        },
+        "width": "10%",
+        "type": "bulletBar"
+    }, {
+        "field": "completedPlanned",
+        "title": "Plan<br>Updated",
+        "width": "5%",
+        "attributes": {
+            "class": "completed-planned-71"
+        }
+    }, {
+        "field": "executionRoadmaps",
+        "title": "",
+        "width": "10%",
+        "headerTemplate": "",
+        "attributes": {
+            "class": "execution-roadmaps-71"
+        }
+    }, {
+        "field": "execution",
+        "title": "Execution<br>Roadmaps",
+        "attributes": {
+            "class": "execution-wrapper-71"
+        },
+        "width": "10%",
+        "type": "stackedGraph"
+    }, {
+        "field": "executionRoadmapsToRoadmaps",
+        "title": "Roadmaps<br>to Roadmaps",
+        "attributes": {
+            "class": "execution-roadmapsToRoadmaps-71"
+        },
+        "width": "7%"
+    }, {
+        "field": "executionTarget",
+        "title": "Target",
+        "width": "5%"
+    }, {
+        "field": "execution",
+        "title": "",
+        "headerTemplate": "",
+        "attributes": {
+            "class": "targetGap-wrapper-71"
+        },
+        "width": "7%",
+        "type": "gapBar"
+    }, {
+        "field": "targetGap",
+        "title": "Gap to<br>Target",
+        "width": "5%",
+        "attributes": {
+            "class": "targetGap-71"
+        }
+    }]
+}
