@@ -177,79 +177,86 @@ div.k-grid-header {
 }
 
 /* GRID 7.1 */
-.k-grid .project-number-71, [data-title="projectNum"]  {
+.grid-71 .project-number {
     padding-right: .5em;
     text-align: right;
 }
-.k-grid .target-wrapper-71 {
+.grid-71 .completed-actual{
+    color: lightskyblue;
+    padding-right: 1em;
+    text-align: right;
+}
+.grid-71 .target-wrapper {
     position: relative;
 }
-.k-grid .target-progress-71 {
+.grid-71 .target-wrapper .target-progress {
     background: lightskyblue;
     height: 20px;
-}
-.k-grid .target-71 {
+ }
+.grid-71 .target-wrapper .target {
     background: #000;
     height: 20px;
+    padding: 0;
     position: absolute;
     top: 1px;
     width: 2px;
 }
-.k-grid .execution-target-71{
-    height: 20px;
-    position: absolute;
-    top: 1px;
-    width: 0;
-
-    border-right-width:2px;
-    border-right-style:dotted;
-    border-right-color:#000;
-}
-.k-grid .completedText-71{
-    color: lightskyblue;
-}
-.k-grid .completed-planned-71{
+.grid-71 [data-field="completedPlanned"] {
     text-align: right;
 }
-.k-grid .execution-roadmaps-71{
+.grid-71 .completed-planned {
+    padding-right: 1em;
+    text-align: right;
+}
+.grid-71 .execution-roadmaps{
     text-align: right;
     color: #B5A386;
     padding-right: .5em;
 }
-.k-grid .execution-wrapper-71 {
+.grid-71 .k-header[data-field="executionRoadmapsToRoadmaps"] {
+    text-align: right;
+}
+.grid-71 .execution-to-roadmaps {
+    color: #E2D8C9;
+    padding-right: .5em;
+    text-align: right;
+}
+.grid-71 .execution-wrapper {
     position: relative;
 }
-.k-grid .stackGraph-bar1-71{
+.grid-71 .stack-graph-bar1{
     background: #E2D8C9;
     height: 20px;
 }
-.k-grid .stackGraph-bar2-71{
+.grid-71 .stack-graph-bar2{
     background: #B5A386;
     height: 20px;
     position:absolute;
 }
-.k-grid .targetGap-wrapper-71{
-    position: relative;
+.grid-71 .execution-target {
+    height: 20px;
+    position: absolute;
+    top: 1px;
+    width: 0;
+    border-right-width:2px;
+    border-right-style:dotted;
+    border-right-color:#000;
 }
-.k-grid .targetGap-71{
+.grid-71 .k-header[data-field="executionTarget"], .grid-71 .target {
+    padding-left: 10px;
+}
+.k-grid .target-gap-bar div {
+    background: #FFA347;
+    float: right;
+    height: 20px;
+}
+.grid-71 .target-gap {
     color: #FFA347;
     padding-left: .5em;
 }
-.k-grid .gapBackground-71{
-    background: #FFA347;
-    height: 20px;
-}
-.k-grid .gapWhite-71{
-    background: white;
-    height: 20px;
-    position: absolute;
-}
-.k-grid .execution-roadmapsToRoadmaps-71{
-    color: #E2D8C9;
-    padding-right: .5em;
-    text-align: center;
 
-}
+
+
 
 /* GRID 7.1 POPUP */
 .popup-71, [data-title="popup-header-71"] {

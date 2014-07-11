@@ -9,7 +9,7 @@
         "title": "Project",
         "width": "5%",
         "attributes": {
-            "class": "project-number-71"
+            "class": "project-number"
         },
         "sortable": false
     }, {
@@ -17,13 +17,16 @@
         "title": "",
         "width": "8%",
         "headerTemplate": "",
+        "attributes": {
+            "class": "project-name"
+        },
         "sortable": false
     }, {
         "field": "completedActual",
         "title": "",
-        "width": "1%",
+        "width": "25px",
         "attributes": {
-            "class": "completedText-71"
+            "class": "completed-actual"
         },
         "headerTemplate": "",
         "sortable": false
@@ -31,66 +34,69 @@
         "field": "completed",
         "title": "Completed",
         "attributes": {
-            "class": "target-wrapper-71"
+            "class": "target-wrapper"
         },
-        "width": "10%",
+        "width": "200px",
         "type": "bulletBar",
         "sortable": false
     }, {
         "field": "completedPlanned",
         "title": "Plan<br>Updated",
-        "width": "5%",
+        "width": "75px",
         "attributes": {
-            "class": "completed-planned-71"
+            "class": "completed-planned"
         },
         "sortable": false
     }, {
         "field": "executionRoadmaps",
         "title": "",
-        "width": "10%",
+        "width": "125px",
         "headerTemplate": "",
         "attributes": {
-            "class": "execution-roadmaps-71"
+            "class": "execution-roadmaps"
         },
         "sortable": false
     }, {
         "field": "execution",
         "title": "Execution<br>Roadmaps",
         "attributes": {
-            "class": "execution-wrapper-71"
+            "class": "execution-wrapper"
         },
-        "width": "10%",
+        "width": "200px",
         "type": "stackedGraph",
         "sortable": false
     }, {
         "field": "executionRoadmapsToRoadmaps",
         "title": "Roadmaps<br>to Roadmaps",
         "attributes": {
-            "class": "execution-roadmapsToRoadmaps-71"
+            "class": "execution-to-roadmaps"
         },
-        "width": "7%",
+        "width": "120px",
         "sortable": false
     }, {
         "field": "executionTarget",
         "title": "Target",
         "width": "5%",
+        "attributes": {
+            "class": "target"
+        },
         "sortable": false
     }, {
-        "field": "execution",
+        "field": "targetGap",
         "title": "",
         "headerTemplate": "",
         "attributes": {
-            "class": "targetGap-wrapper-71"
+            "class": "target-gap-bar"
         },
         "width": "7%",
-        "type": "gapBar",
+        "type": "barChart",
         "sortable": false
     }, {
         "field": "targetGap",
         "title": "Gap to<br>Target",
         "width": "5%",
         "attributes": {
-            "class": "targetGap-71"
+            "class": "target-gap"
         }
     }, {
         "attributes": {

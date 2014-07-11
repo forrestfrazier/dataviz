@@ -19,28 +19,28 @@ function drawChart(configuration, data, fileUsed) {
 function drawGrid(configuration, data, fileUsed) {
     switch (fileUsed) {
         case 0:
-            classToAdd = "grid-6.1-Text";
+            classToAdd = "grid-61-Text";
             break;
         case "1":
-            classToAdd = "grid-6.1";
+            classToAdd = "grid-61";
             break;
         case "2":
-            classToAdd = "grid-6.3";
+            classToAdd = "grid-63";
             break;
         case "3":
-            classToAdd = "grid-6.5";
+            classToAdd = "grid-65";
             break;
         case "4":
-            classToAdd = "grid-6.6";
+            classToAdd = "grid-66";
             break;
         case "5":
-            classToAdd = "grid-6.7";
+            classToAdd = "grid-67";
             break;
         case "6":
-            classToAdd = "grid-6.8";
+            classToAdd = "grid-68";
             break;
         case "8":
-            classToAdd = "grid-7.1";
+            classToAdd = "grid-71";
             break;
     }
     if (classToAdd !== "") {
@@ -99,7 +99,7 @@ function drawGrid(configuration, data, fileUsed) {
                         case "6":
                             return '<div class="target-progress-68" style="width:' + dataItem[actual] + '%"></div><div class="target-68" style="left:' + dataItem[planned] + '%"></div>';
                         case "8":
-                            return '<div class="target-progress-71" style="width:' + dataItem[actual] + '%"></div><div class="target-71" style="left:' + dataItem[planned] + '%"></div>';
+                            return '<div class="target-progress" style="width:' + dataItem[actual] + '%"></div><div class="target" style="left:' + dataItem[planned] + '%"></div>';
                     }
                 };
                 break;
@@ -108,17 +108,17 @@ function drawGrid(configuration, data, fileUsed) {
                     var bar1 = dataItem[(column.field + "Roadmaps")],
                         bar2 = dataItem[(column.field + "RoadmapsToRoadmaps")],
                         target = dataItem[(column.field + "Target")];
-                    return '<div class="stackGraph-bar2-71" style="width:' + bar1 + '%"></div><div class="stackGraph-bar1-71" style="width:' + bar2 + '%"></div><div class="execution-target-71" style="left:' + target + '%"></div>';
+                    return '<div class="stack-graph-bar2" style="width:' + bar1 + '%"></div><div class="stack-graph-bar1" style="width:' + bar2 + '%"></div><div class="execution-target" style="left:' + target + '%"></div>';
                 };
                 break;
-            case "gapBar":
+            /*case "gapBar":
                 column.template = function(dataItem) {
                     var target = dataItem[(column.field + "Target")],
                         actual = dataItem[(column.field + "RoadmapsToRoadmaps")],
                         gap = Math.abs(target - actual);
-                    return '<div class="gapWhite-71" style="width:' + (100 - gap) + '%"></div><div class="gapBackground-71" style="width:100%"></div>';
+                    return '<div class="gap-to-target" style="width:' + (gap) + '%"></div>';
                 };
-                break;
+                break;*/
         }
     });
 
