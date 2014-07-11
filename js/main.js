@@ -132,7 +132,7 @@ function handleSelection(value) {
                     } else {
                         $('#chart').hide();
                         $('#grid').show();
-                        drawGrid(configuration, data);
+                        drawGrid(configuration, data, value);
                         pseudoHeader(configuration);
                         if (configuration.chartType === "group") {
                             $("#grid").data("kendoGrid").dataSource.group({
