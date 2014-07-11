@@ -1,4 +1,5 @@
 var trafficLights = ["green", "yellow", "red"];
+var classToAdd = "";
 
 function drawChart(configuration, data) {
     $('#grid').hide();
@@ -16,15 +17,57 @@ function drawChart(configuration, data) {
 
 
 function drawGrid(configuration, data, fileUsed) {
+    switch (fileUsed) {
+        case 0:
+            classToAdd = "grid-6.1-Text";
+            break;
+        case "1":
+            classToAdd = "grid-6.1";
+            break;
+        case "2":
+            classToAdd = "grid-6.3";
+            break;
+        case "3":
+            classToAdd = "grid-6.5";
+            break;
+        case "4":
+            classToAdd = "grid-6.6";
+            break;
+        case "5":
+            classToAdd = "grid-6.7";
+            break;
+        case "6":
+            classToAdd = "grid-6.8";
+            break;
+        case "8":
+            classToAdd = "grid-7.1";
+            break;
+    }
+    if (classToAdd !== "") {
+        $("#grid").addClass(classToAdd);
+    }
     // Add templates for columns as necessary
     $.each(configuration.columns, function(index, column) {
         switch (column.type) {
             case "popupTemplate":
                 column.template = function(dataItem) {
-                var template = ("<div class=\"popper-66\"><div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p></div>");
-                return template;
-            };
-            break;
+                    var template;
+                    switch (fileUsed) {
+                        case "4":
+                            template = ("<div class=\"popper-66\"><div>" + dataItem["name"] + "</div>" + "<p>" + "Target:    " + dataItem["target"] + "</p>" + "<p>" + "Project Owner:    " + dataItem["owner"] + "</p></div>");
+                            break;
+                        case "8":
+                            template = ("<div class=\"popper-71\"><div class=\"popup-name-71\">" + dataItem["projectNum"] + " " + dataItem["projectName"] + "<hr></div><div class=\"popup-column-left-71\">Completed <div class=\"popup-number-71\">" +
+                                dataItem["completedActual"] + "</div><br>Plan updated <div class=\"popup-number-71\">" + dataItem["completedPlanned"] + "</div><hr><div class=\"popup-results-71\">Gap to Plan <div class=\"popup-number-71\">" +
+                                (dataItem["completedActual"] - dataItem["completedPlanned"]) + "</div></div></div><div class=\"popup-column-right-71\" >Execution Roadmaps<div class=\"popup-number-71\">" + dataItem["executionRoadmaps"] +
+                                "</div> Roadmaps to Roadmaps <div class=\"popup-number-71\">" + dataItem["executionRoadmapsToRoadmaps"] + "</div>Target<div class=\"popup-number-71\">" + dataItem["executionTarget"] +
+                                "</div><hr><div class=\"popup-results-71\">Gap to Target<div class=\"popup-number-71\">" + (dataItem["executionRoadmapsToRoadmaps"] - dataItem["executionTarget"]) + "</div></div></div></div>");
+                            break;
+
+                    }
+                    return template;
+                };
+                break;
             case "trafficLight":
                 column.template = function(dataItem) {
                     return '<div class="' + trafficLights[dataItem[column.field]] + '">&nbsp;</div>';
@@ -53,13 +96,10 @@ function drawGrid(configuration, data, fileUsed) {
                     switch (fileUsed) {
                         case "5":
                             return '<div class="target-progress-67" style="width:' + dataItem[actual] + '%"></div><div class="target-67" style="left:' + dataItem[planned] + '%"></div>';
-                            break;
                         case "6":
                             return '<div class="target-progress-68" style="width:' + dataItem[actual] + '%"></div><div class="target-68" style="left:' + dataItem[planned] + '%"></div>';
-                            break;
                         case "8":
                             return '<div class="target-progress-71" style="width:' + dataItem[actual] + '%"></div><div class="target-71" style="left:' + dataItem[planned] + '%"></div>';
-                            break;
                     }
                 };
                 break;
@@ -129,15 +169,10 @@ function handleSelection(value) {
 
                     // determine chart or grid
                     if (configuration.chartType === "chart") {
-                        // empty and hide the default grid instance
-                        //$('#chart').show();
-                        //$('#grid').hide();
                         // get the config and data for the chart and build it
                         drawChart(configuration, data);
 
                     } else {
-                        //$('#chart').hide();
-                        //$('#grid').show();
                         drawGrid(configuration, data, value);
                         pseudoHeader(configuration);
                         if (configuration.chartType === "group") {
@@ -178,10 +213,14 @@ function pseudoHeader(configuration) {
 }
 
 $(document).ready(function() {
-
     $(".use-case-selector").on("change", function(event) {
         // empty out all charts and grids
         $('#chart, #grid').empty();
+        // identify the grid
+        if (classToAdd !== "") {
+            $("#grid").removeClass(classToAdd);
+            classToAdd = "";
+        }
         var el = event.target;
         handleSelection(el.options[el.selectedIndex].value);
     });
