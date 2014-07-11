@@ -1,10 +1,16 @@
 var trafficLights = ["green", "yellow", "red"];
 
 function drawChart(configuration, data) {
+    $('#grid').hide();
     $("#chart").kendoChart(configuration);
     $(".k-chart").data("kendoChart").bind("seriesClick", function(e) {
         //console.log(e);
         console.log('Send data to REST server to get details for ' + e.category);
+
+        // now show the corrisponding grid under the chart
+        $('#grid').show();
+        handleSelection(8);
+
     });
 }
 
@@ -124,14 +130,14 @@ function handleSelection(value) {
                     // determine chart or grid
                     if (configuration.chartType === "chart") {
                         // empty and hide the default grid instance
-                        $('#chart').show();
-                        $('#grid').hide();
+                        //$('#chart').show();
+                        //$('#grid').hide();
                         // get the config and data for the chart and build it
                         drawChart(configuration, data);
 
                     } else {
-                        $('#chart').hide();
-                        $('#grid').show();
+                        //$('#chart').hide();
+                        //$('#grid').show();
                         drawGrid(configuration, data, value);
                         pseudoHeader(configuration);
                         if (configuration.chartType === "group") {
@@ -174,6 +180,8 @@ function pseudoHeader(configuration) {
 $(document).ready(function() {
 
     $(".use-case-selector").on("change", function(event) {
+        // empty out all charts and grids
+        $('#chart, #grid').empty();
         var el = event.target;
         handleSelection(el.options[el.selectedIndex].value);
     });
